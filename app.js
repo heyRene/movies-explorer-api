@@ -8,11 +8,12 @@ const router = require('./routes');
 const handleErrors = require('./middlewares/handleErrors');
 const limiter = require('./middlewares/rateLimit');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const { MONGO_URL } = require('./config');
 
 const { PORT = 3000 } = process.env;
 const app = express();
 app.use(requestLogger);
-mongoose.connect('mongodb://127.0.0.1:27017/bitfilmsdb');
+mongoose.connect(MONGO_URL);
 
 app.use(helmet());
 app.use(limiter);
