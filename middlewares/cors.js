@@ -3,10 +3,8 @@ const CORS_ALLOWED = [
   'https://localhost:3000',
   'https://api.movie-heyrene.nomoredomains.rocks',
   'http://api.movie-heyrene.nomoredomains.rocks',
-  'https://heyrene.nomoredomains.monster',
-  'https://api.heyrene.nomoredomains.monster',
-  'http://api.heyrene.nomoredomains.monster',
-  'http://heyrene.nomoredomains.monster',
+  'https://movie-heyrene.nomoredomains.rocks',
+  'http://movie-heyrene.nomoredomains.rocks',
 ];
 
 const handleCors = (req, res, next) => {
@@ -17,7 +15,7 @@ const handleCors = (req, res, next) => {
   const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
   if (CORS_ALLOWED.includes(origin)) {
     res.header('Access-Control-Allow-Credentials', true);
-    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Origin', origin);
   }
   if (method === 'OPTIONS') {
     res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
