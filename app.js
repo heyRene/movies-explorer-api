@@ -16,7 +16,7 @@ const app = express();
 app.use(requestLogger);
 mongoose.connect(MONGO_URL);
 
-app.use(handleCors);
+app.use(handleCors());
 app.use(helmet());
 app.use(limiter);
 app.use(express.json());
