@@ -15,7 +15,7 @@ const corsOption = require('./middlewares/cors');
 
 const { PORT = 3000 } = process.env;
 const app = express();
-app.use(corsOption);
+app.use(corsOption());
 // app.use(cors());
 // app.options('*', cors());
 app.use(requestLogger);
