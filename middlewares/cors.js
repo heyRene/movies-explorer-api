@@ -7,7 +7,7 @@
 //   'http://movie-heyrene.nomoredomains.rocks',
 // ];
 
-const handleCors = (req, res, next) => {
+module.exports = (req, res, next) => {
   // const { origin } = req.headers; // Сохраняем источник запроса в переменную origin
   const { method } = req; // Сохраняем тип запроса (HTTP-метод) в соответствующую переменную
   const requestHeaders = req.headers['access-control-request-headers'];
@@ -23,4 +23,4 @@ const handleCors = (req, res, next) => {
   return next();
 };
 
-module.exports = handleCors;
+// module.exports = handleCors;
