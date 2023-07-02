@@ -19,7 +19,7 @@ app.use(requestLogger);
 mongoose.connect(MONGO_URL);
 
 app.use(helmet());
-app.use(cors(corsOption));
+app.use(corsOption);
 app.use(limiter);
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
