@@ -18,6 +18,7 @@ const app = express();
 app.use(requestLogger);
 mongoose.connect(MONGO_URL);
 
+app.use(cors());
 app.use(helmet());
 app.use(corsOption);
 app.use(limiter);
