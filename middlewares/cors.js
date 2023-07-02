@@ -1,5 +1,7 @@
 const CORS_ALLOWED = [
   'http://localhost:3000',
+  'https://api.movie-heyrene.nomoredomains.rocks',
+  'http://api.movie-heyrene.nomoredomains.rocks',
   'https://heyrene.nomoredomains.monster',
   'https://api.heyrene.nomoredomains.monster',
   'http://api.heyrene.nomoredomains.monster',
