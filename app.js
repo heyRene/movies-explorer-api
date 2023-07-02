@@ -11,7 +11,7 @@ const handleErrors = require('./middlewares/handleErrors');
 const limiter = require('./middlewares/rateLimit');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { MONGO_URL } = require('./config');
-// const corsOption = require('./middlewares/cors');
+const corsOption = require('./middlewares/cors');
 
 const { PORT = 3000 } = process.env;
 const app = express();
@@ -21,7 +21,7 @@ app.use(requestLogger);
 mongoose.connect(MONGO_URL);
 
 app.use(helmet());
-// app.use(corsOption);
+app.use(corsOption);
 app.use(limiter);
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
