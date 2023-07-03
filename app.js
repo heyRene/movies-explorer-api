@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-// const cors = require('cors');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
 
@@ -11,13 +11,13 @@ const handleErrors = require('./middlewares/handleErrors');
 const limiter = require('./middlewares/rateLimit');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { MONGO_URL } = require('./config');
-const corsOption = require('./middlewares/cors');
+// const corsOption = require('./middlewares/cors');
 
 const { PORT = 3000 } = process.env;
 const app = express();
-app.use(corsOption());
-// app.use(cors());
-// app.options('*', cors());
+// app.use(corsOption());
+app.use(cors());
+app.options('*', cors());
 app.use(requestLogger);
 mongoose.connect(MONGO_URL);
 
